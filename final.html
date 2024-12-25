@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delightful Bites</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; position: relative; }
+        .hero { background: url('cakes.jpeg') no-repeat center center; background-size: cover; color: #671067; padding: 50px 0; }
+        .btn-primary { background-color: #9370DB; border-color: #9370DB; }
+        .btn-primary:hover { background-color: #7B68EE; border-color: #7B68EE; }
+        .card-img-top { object-fit: cover; width: 100%; height: 200px; }
+        #cart-items {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+        h1::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 4px;
+    margin: 1rem auto 0;
+    
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Delightful Bites</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cart">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center">
+        <h1>Welcome to Delightful Bites</h1>
+        <p>Your one-stop shop for all confectionery needs</p>
+        <a href="#products" class="btn btn-light">Shop Now</a>
+    </section>
+
+    <section id="about" class="container my-5">
+        <h2>About Us</h2>
+        <p>We deliver the finest confectionery items to satisfy your sweet tooth. From chocolates to delightful cakes, we have it all.</p>
+    </section>
+
+    <section id="products" class="container my-5">
+        <h2>Our Products</h2>
+        <div id="product-grid" class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="chocolate-cake.jpg" class="card-img-top" alt="Chocolate Cake">
+                    <div class="card-body">
+                        <h5 class="card-title">Chocolate Cake</h5>
+                        <p class="card-text">Price: $20</p>
+                        <button class="btn btn-primary" onclick="addToCart('Chocolate Cake', 20)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="macarons.jpg" class="card-img-top" alt="Macarons">
+                    <div class="card-body">
+                        <h5 class="card-title">Macarons</h5>
+                        <p class="card-text">Price: $15</p>
+                        <button class="btn btn-primary" onclick="addToCart('Macarons', 15)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="truffles.jpg" class="card-img-top" alt="Truffles">
+                    <div class="card-body">
+                        <h5 class="card-title">Truffles</h5>
+                        <p class="card-text">Price: $25</p>
+                        <button class="btn btn-primary" onclick="addToCart('Truffles', 25)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="cupcakes.jpg" class="card-img-top" alt="Cupcakes">
+                    <div class="card-body">
+                        <h5 class="card-title">Cupcakes</h5>
+                        <p class="card-text">Price: $10</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cupcakes', 10)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="donuts.jpg" class="card-img-top" alt="Donuts">
+                    <div class="card-body">
+                        <h5 class="card-title">Donuts</h5>
+                        <p class="card-text">Price: $12</p>
+                        <button class="btn btn-primary" onclick="addToCart('Donuts', 12)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="candy-jar.jpg" class="card-img-top" alt="Candy Jar">
+                    <div class="card-body">
+                        <h5 class="card-title">Candy Jar</h5>
+                        <p class="card-text">Price: $18</p>
+                        <button class="btn btn-primary" onclick="addToCart('Candy Jar', 18)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="fruit-tart.jpg" class="card-img-top" alt="Fruit Tart">
+                    <div class="card-body">
+                        <h5 class="card-title">Fruit Tart</h5>
+                        <p class="card-text">Price: $22</p>
+                        <button class="btn btn-primary" onclick="addToCart('Fruit Tart', 22)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="cheesecake.jpg" class="card-img-top" alt="Cheesecake">
+                    <div class="card-body">
+                        <h5 class="card-title">Cheesecake</h5>
+                        <p class="card-text">Price: $28</p>
+                        <button class="btn btn-primary" onclick="addToCart('Cheesecake', 28)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="eclairs.jpg" class="card-img-top" alt="Eclairs">
+                    <div class="card-body">
+                        <h5 class="card-title">Eclairs</h5>
+                        <p class="card-text">Price: $16</p>
+                        <button class="btn btn-primary" onclick="addToCart('Eclairs', 16)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="container my-5">
+        <h2>Your Cart</h2>
+        <ul id="cart-items" class="list-group mb-3"></ul>
+        <div class="d-flex justify-content-between align-items-center">
+            <strong>Total:</strong><span id="cart-total">$0</span>
+        </div>
+        <button id="checkout-btn" class="btn btn-success mt-3">Checkout</button>
+    </section>
+
+    <section id="contact" class="container my-5">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Delightful Bites. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        const renderCart = () => {
+            const cartItems = document.getElementById('cart-items');
+            const cartTotal = document.getElementById('cart-total');
+            cartItems.innerHTML = cart.map((item, index) => `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${item.name} - $${item.price}
+                    <button class="btn btn-sm btn-danger" onclick="removeFromCart(${index})">Remove</button>
+                </li>
+            `).join('');
+            cartTotal.textContent = `$${cart.reduce((total, item) => total + item.price, 0)}`;
+        };
+
+        const addToCart = (name, price) => {
+            cart.push({ name, price });
+            renderCart();
+        };
+
+        const removeFromCart = index => {
+            cart.splice(index, 1);
+            renderCart();
+        };
+
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            if (!cart.length) return alert('Your cart is empty.');
+            alert('Payment successful! Thank you for your purchase.');
+            cart = [];
+            renderCart();
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', e => {
+            e.preventDefault();
+            alert('Thank you for reaching out!');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
